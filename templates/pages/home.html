@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title %}Home - Message Board{% endblock %}
+
+{% block content %}
+    <div class="text-center mb-5">
+        <h1>Welcome to Message Board</h1>
+        <p class="lead">Join the conversation. Share your voice. Connect with others.</p>
+    </div>
+
+    <h2>Trending Discussions</h2>
+    
+    <!-- Mock Post 1 -->
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">The Future of AI in Everyday Life</h5>
+            <p class="card-text">What do you think about AI assistants becoming more integrated into our daily routines? Are we ready for this shift?</p>
+            <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">Posted by @tech_enthusiast • 2 hours ago</small>
+                <span class="badge bg-primary">127 replies</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mock Post 2 -->
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">Best Coding Practices for Beginners</h5>
+            <p class="card-text">I've been coding for 6 months now. What are some habits I should develop early to become a better programmer?</p>
+            <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">Posted by @newbie_dev • 5 hours ago</small>
+                <span class="badge bg-primary">89 replies</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mock Post 3 -->
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">How to Stay Motivated While Learning</h5>
+            <p class="card-text">Sometimes I feel overwhelmed with all the new concepts. How do you all stay motivated when things get tough?</p>
+            <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">Posted by @learner_2024 • 1 day ago</small>
+                <span class="badge bg-primary">203 replies</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mock Post 4 -->
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">Django vs Flask: Which Should I Choose?</h5>
+            <p class="card-text">Starting a new web project and can't decide between Django and Flask. What are the pros and cons of each?</p>
+            <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">Posted by @python_dev • 1 day ago</small>
+                <span class="badge bg-primary">156 replies</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Mock Post 5 -->
+    <div class="card mb-3">
+        <div class="card-body">
+            <h5 class="card-title">Remote Work: Tips for Productivity</h5>
+            <p class="card-text">Been working from home for a year now. Share your best tips for staying productive and avoiding burnout!</p>
+            <div class="d-flex justify-content-between align-items-center">
+                <small class="text-muted">Posted by @remote_warrior • 2 days ago</small>
+                <span class="badge bg-primary">94 replies</span>
+            </div>
+        </div>
+    </div>
+
+    <div class="text-center mt-5">
+        <a href="{% url 'home' %}" class="btn btn-success btn-lg">Create Your First Post</a>
+    </div>
+{% endblock %}

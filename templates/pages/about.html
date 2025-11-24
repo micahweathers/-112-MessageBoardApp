@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}About - Message Board{% endblock %}
+
+{% block content %}
+    <h1>About Message Board</h1>
+    <p>Message Board is more than just a platform—it's a thriving community where meaningful conversations happen. Whether you're here to share ideas, learn from others, or simply connect with like-minded individuals, you've found the right place.</p>
+    
+    <h2>Our Story</h2>
+    <p>Founded with a vision to create authentic digital connections, Message Board was built on the principle that every voice matters. We've grown from a simple idea into a vibrant community where thousands of users engage in thoughtful discussions daily.</p>
+    
+    <h2>What We Offer</h2>
+    <p>Our platform provides a clean, distraction-free environment for real conversations. No ads, no algorithms pushing content you don't want—just genuine human interaction. Share your thoughts, ask questions, and discover perspectives that challenge and inspire you.</p>
+    
+    <h2>Why Choose Message Board?</h2>
+    <p>In a world full of noise and superficial content, Message Board cuts through the clutter. Our community values quality over quantity, depth over brevity, and authenticity over performative engagement. Here, your voice truly matters.</p>
+    
+    <h2>Ready to Join?</h2>
+    <p>Don't just be a spectator—become part of the conversation. Whether you're passionate about technology, arts, science, or just looking for thoughtful discussion, there's a place for you here. Join thousands who have already discovered the power of meaningful dialogue.</p>
+    
+    <div class="mt-5 text-center">
+        <a href="{% url 'home' %}" class="btn btn-primary btn-lg px-5 py-3">Start Your Journey Today</a>
+    </div>
+{% endblock %}
