@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+
+{% block title %}Log In{% endblock %}
+
+{% block content %}
+<div class="page-header">
+    <h1>Log In</h1>
+</div>
+
+<div class="post-form-container">
+    <form method="post">
+        {% csrf_token %}
+        
+        {% for field in form %}
+            <div class="post-field">
+                <label for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field }}
+                {% if field.errors %}
+                    <div class="error-message">{{ field.errors }}</div>
+                {% endif %}
+            </div>
+        {% endfor %}
+
+        <div class="post-actions">
+            <button type="submit" class="btn btn-success">Log In</button>
+            <input type="hidden" name="next" value="{{ next }}">
+        </div>
+        
+    </form>
+    
+    <p class="mt-3">
+        <small>Need an account? (Not implemented)</small><br>
+        <small><a href="{% url 'password_reset' %}">Forgot password?</a></small>
+    </p>
+</div>
+{% endblock content %}

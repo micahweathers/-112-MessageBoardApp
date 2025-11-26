@@ -3,77 +3,75 @@
 {% block title %}Posts - Message Board{% endblock %}
 
 {% block content %}
-<h1>Posts</h1>
+<div class="page-header">
+    <h1>Posts</h1>
+</div>
 
+<ul class="posts-list"> 
 {% if posts %}
     {% for item in posts %}
-        <li>
-            <h3>{{ item.title }}</h3>
-            <p>{{ item.body|truncatechars:50 }}</p>
-            <small>By {{ item.author }}</small>
-            <a href="{% url 'post_detail' item.id %}">Continue reading</a>
+        <li class="post-card">
+            <h5 class="card-title">
+                <a href="{% url 'post_detail' item.id %}" class="post-title-link">{{ item.title }}</a>
+            </h5>
+            <p class="card-text">{{ item.body|truncatechars:150 }}</p>
+            <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+                <small class="text-muted">Posted by {{ item.author }} • {{ item.created_on|timesince }} ago</small>
+                <a href="{% url 'post_detail' item.id %}" class="btn btn-primary btn-sm">Continue Reading</a>
+            </div>
         </li>
     {% endfor %}
 {% else %}
-    <h2>Trending Discussions</h2>
+    <h2 class="text-center">Trending Discussions</h2>
     
-    <div class="card mb-3">
-        <div class="card-body">
-            <h5 class="card-title">The Future of AI in Everyday Life</h5>
-            <p class="card-text">What do you think about AI assistants becoming more integrated into our daily routines? Are we ready for this shift?</p>
-            <div class="d-flex justify-content-between align-items-center">
-                <small class="text-muted">Posted by @tech_enthusiast • 2 hours ago</small>
-                <span class="badge bg-primary">127 replies</span>
-            </div>
+    <li class="mock-post-card">
+        <h5 class="card-title">The Future of AI in Everyday Life</h5>
+        <p class="card-text">What do you think about AI assistants becoming more integrated into our daily routines? Are we ready for this shift?</p>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+            <small class="text-muted">Posted by @tech_enthusiast • 2 hours ago</small>
+            <span class="badge bg-primary">127 replies</span>
         </div>
-    </div>
+    </li>
 
-    <div class="card mb-3">
-        <div class="card-body">
-            <h5 class="card-title">Best Coding Practices for Beginners</h5>
-            <p class="card-text">I've been coding...</p>
-            <div class="d-flex justify-content-between align-items-center">
-                <small class="text-muted">Posted by @newbie_coder • 10 hours ago</small>
-                <span class="badge bg-primary">95 replies</span>
-            </div>
+    <li class="mock-post-card">
+        <h5 class="card-title">Best Coding Practices for Beginners</h5>
+        <p class="card-text">I've been coding for a few months now and would love to hear what practices helped you level up as a developer.</p>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+            <small class="text-muted">Posted by @newbie_coder • 10 hours ago</small>
+            <span class="badge bg-primary">95 replies</span>
         </div>
-    </div>
+    </li>
     
-    <div class="card mb-3">
-        <div class="card-body">
-            <h5 class="card-title">Is Learning Python or JavaScript More Important Now?</h5>
-            <p class="card-text">Trying to decide where to focus my learning efforts. Which language do you think is more critical for a developer right now, and why?</p>
-            <div class="d-flex justify-content-between align-items-center">
-                <small class="text-muted">Posted by @learner_2024 • 1 day ago</small>
-                <span class="badge bg-primary">203 replies</span>
-            </div>
+    <li class="mock-post-card">
+        <h5 class="card-title">Is Learning Python or JavaScript More Important Now?</h5>
+        <p class="card-text">Trying to decide where to focus my learning efforts. Which language do you think is more critical for a developer right now, and why?</p>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+            <small class="text-muted">Posted by @learner_2024 • 1 day ago</small>
+            <span class="badge bg-primary">203 replies</span>
         </div>
-    </div>
+    </li>
 
-    <div class="card mb-3">
-        <div class="card-body">
-            <h5 class="card-title">Django vs Flask: Which Should I Choose?</h5>
-            <p class="card-text">Starting a new web project and can't decide between Django and Flask. What are the pros and cons of each?</p>
-            <div class="d-flex justify-content-between align-items-center">
-                <small class="text-muted">Posted by @python_dev • 1 day ago</small>
-                <span class="badge bg-primary">156 replies</span>
-            </div>
+    <li class="mock-post-card">
+        <h5 class="card-title">Django vs Flask: Which Should I Choose?</h5>
+        <p class="card-text">Starting a new web project and can't decide between Django and Flask. What are the pros and cons of each?</p>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+            <small class="text-muted">Posted by @python_dev • 1 day ago</small>
+            <span class="badge bg-primary">156 replies</span>
         </div>
-    </div>
+    </li>
 
-    <div class="card mb-3">
-        <div class="card-body">
-            <h5 class="card-title">Remote Work: Tips for Productivity</h5>
-            <p class="card-text">Been working from home for a year now. Share your best tips for staying productive and avoiding burnout!</p>
-            <div class="d-flex justify-content-between align-items-center">
-                <small class="text-muted">Posted by @remote_warrior • 2 days ago</small>
-                <span class="badge bg-primary">88 replies</span>
-            </div>
+    <li class="mock-post-card">
+        <h5 class="card-title">Remote Work: Tips for Productivity</h5>
+        <p class="card-text">Been working from home for a year now. Share your best tips for staying productive and avoiding burnout!</p>
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-top: 1rem;">
+            <small class="text-muted">Posted by @remote_warrior • 2 days ago</small>
+            <span class="badge bg-primary">88 replies</span>
         </div>
-    </div>
+    </li>
 {% endif %}
+</ul>
 
 <div class="mt-5 text-center">
-    <a href="{% url 'post_new' %}" class="btn btn-lg btn-success">Create Your Own Post</a>
+    <a href="{% url 'post_new' %}" class="btn btn-create-post btn-lg btn-success">Create Your Own Post</a>
 </div>
 {% endblock %}

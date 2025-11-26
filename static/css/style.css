@@ -224,9 +224,42 @@ body {
     color: #f0f6fc;
 }
 
+/* Warning Button (Edit) - DEPRECATED, use btn-success instead */
+.btn-warning {
+    background-color: #bb8009 !important;
+    border-color: #bb8009;
+    color: #ffffff;
+}
+
+.btn-warning:hover {
+    background-color: #c69026 !important;
+    border-color: #c69026;
+    box-shadow: 0 0 15px rgba(198, 144, 38, 0.4);
+    color: #ffffff;
+}
+
+/* Danger Button (Delete) */
+.btn-danger {
+    background-color: #da3633 !important;
+    border-color: #da3633;
+    color: #ffffff;
+}
+
+.btn-danger:hover {
+    background-color: #f85149 !important;
+    border-color: #f85149;
+    box-shadow: 0 0 15px rgba(248, 81, 73, 0.4);
+    color: #ffffff;
+}
+
 .btn-lg {
     padding: 0.75rem 2rem;
     font-size: 1.1rem;
+}
+
+.btn-sm {
+    padding: 0.5rem 1rem;
+    font-size: 0.875rem;
 }
 
 /* Text Utilities */
@@ -321,7 +354,7 @@ small {
     font-size: 0.875rem;
 }
 
-/* List Items */
+/* List Items - Base Styling */
 li {
     list-style: none;
     background-color: #21262d;
@@ -343,6 +376,11 @@ li h3 {
     color: #f0f6fc;
 }
 
+li h5 {
+    margin-top: 0;
+    color: #f0f6fc;
+}
+
 li p {
     color: #d0d7de;
     margin: 0.5rem 0;
@@ -355,7 +393,7 @@ li small {
 }
 
 li a {
-    color: #58a6ff; /* RESTORED COLOR */
+    color: #58a6ff;
     text-decoration: none;
     margin-top: 0.5rem;
     display: inline-block;
@@ -364,6 +402,71 @@ li a {
 li a:hover {
     color: #79c0ff;
     text-decoration: underline;
+}
+
+/* Post Card - For Real Posts */
+.post-card {
+    list-style: none;
+    background-color: #21262d;
+    border: 1px solid #30363d;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.post-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(88, 166, 255, 0.2);
+    border-color: #58a6ff;
+}
+
+.post-card .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 0.75rem;
+    color: #f0f6fc;
+    font-weight: bold;
+}
+
+.post-card .card-title a {
+    color: #f0f6fc;
+    text-decoration: none;
+}
+
+.post-card .card-title a:hover {
+    color: #79c0ff;
+}
+
+.post-card .post-title-link {
+    color: #f0f6fc;
+    text-decoration: none;
+}
+
+.post-card .post-title-link:hover {
+    color: #79c0ff;
+}
+
+.post-card .card-text {
+    color: #d0d7de;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+/* Mock Post Card - For Mock Posts */
+.mock-post-card {
+    list-style: none;
+    background-color: #21262d;
+    border: 1px solid #30363d;
+    padding: 1.5rem;
+    margin-bottom: 1rem;
+    border-radius: 4px;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.mock-post-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(88, 166, 255, 0.2);
+    border-color: #58a6ff;
 }
 
 /* Post Page Styles */
@@ -443,6 +546,98 @@ li a:hover {
     padding: 0.75rem 1.5rem;
 }
 
+.post-actions-detail {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+    display: flex;
+    gap: 1rem;
+}
+
+/* Post Detail Styles (Original - Left Aligned) */
+.post-detail-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.post-meta {
+    color: #8b949e;
+    margin-bottom: 2rem;
+    font-size: 1rem;
+}
+
+.post-image-container {
+    margin: 2rem 0;
+}
+
+.post-body {
+    margin: 2rem 0;
+}
+
+.back-link {
+    margin-top: 2rem;
+}
+
+/* Centered Post Detail Container */
+.post-detail-container-centered {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.post-detail-container-centered h1 {
+    text-align: center !important;
+}
+
+.post-detail-container-centered h3 {
+    text-align: center !important;
+    margin-bottom: 1rem;
+}
+
+/* Specific class for subtitle */
+.post-subtitle {
+    text-align: center !important;
+    color: #f0f6fc;
+    margin-bottom: 1rem;
+}
+
+.post-detail-container-centered .post-meta {
+    text-align: center !important;
+}
+
+.post-detail-container-centered .post-body {
+    text-align: center;
+    margin: 2rem auto;
+    max-width: 700px;
+}
+
+.post-detail-container-centered .post-body h3 {
+    text-align: center;
+}
+
+.post-detail-container-centered .post-image-container {
+    text-align: center;
+    margin: 2rem auto;
+}
+
+/* Centered Action Buttons */
+.post-actions-detail-centered {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin: 2rem auto;
+}
+
+/* Centered Back Link */
+.back-link-centered {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+/* Make buttons same width for alignment */
+.post-actions-detail-centered .btn {
+    min-width: 150px;
+}
+
 /* Footer */
 footer {
     background-color: #161b22;
@@ -501,5 +696,22 @@ footer p {
     .post-actions .btn {
         width: 100%;
     }
-}
+    
+    .post-actions-detail {
+        flex-direction: column;
+    }
+    
+    .post-actions-detail .btn {
+        width: 100%;
+    }
+    
+    .post-actions-detail-centered {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .post-actions-detail-centered .btn {
+        width: 100%;
+        max-width: 300px;
+    }
 }
